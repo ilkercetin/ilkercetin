@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://miro.medium.com/max/2048/1*OohqW5DGh9CQS4hLY5FXzA.png" height="230"/>
 </p>
-<h1 align="center">I'm <a href="https://ilkercetin.netlify.app/">İlker Çetin<a>
+<h1 align="center">My name is <a href="https://ilkercetin.netlify.app/">İlker Çetin<a>
 <br>
 <a href="https://ilkercetin.netlify.app/" target="_blank">Click to visit my personal website!<a>
 </h1>
