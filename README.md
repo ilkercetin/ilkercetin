@@ -1,22 +1,21 @@
 <p align="center">
   <img src="https://miro.medium.com/max/2048/1*OohqW5DGh9CQS4hLY5FXzA.png" height="230"/>
 </p>
-<h1 align="center">My name is <a href="https://ilkercetin.netlify.app/">İlker Çetin<a>
+<h1 align="center">My name is <a href="https://ilkercetin.netlify.app/" target="_blank">İlker Çetin<a>
 <br>
 <a href="https://ilkercetin.netlify.app/" target="_blank">Click to visit my personal website!<a>
 </h1>
 <Br>
 <h1>About Me</h1>
 
-- 🔭: I am currently working at Insider as Front-end Developer for 2-3 years.
-- 🌱: I am currently learning Vue.js, React and Typescript.
+- 🔭: I am currently working at Insider as Front-end Developer for 4 years.
   
 <hr>
 <Br>
 <h1 align="center">Contact Me 📬</h1>
 <Br>
 <p align="center">
-<a href="https://www.linkedin.com/in/ilker-ctn" target="blank"><img align="center" src="https://img.shields.io/badge/İlker Çetin-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> &nbsp;&nbsp;&nbsp;  <a href="mailto:97ilkercetin@gmail.com" target="blank"><img align="center" src="https://img.shields.io/badge/97ilkercetin@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>    &nbsp;&nbsp;&nbsp;       <a href="https://www.github.com/ilkercetin" target="blank"><img align="center" src="https://img.shields.io/badge/ilkercetin-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/ilker-ctn" target="_blank"><img align="center" src="https://img.shields.io/badge/İlker Çetin-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a> &nbsp;&nbsp;&nbsp;  <a href="mailto:97ilkercetin@gmail.com" target="_blank"><img align="center" src="https://img.shields.io/badge/97ilkercetin@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>    &nbsp;&nbsp;&nbsp;       <a href="https://www.github.com/ilkercetin" target="_blank"><img align="center" src="https://img.shields.io/badge/ilkercetin-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
   
 <Br>
