@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#16a34a" />
+  <title>Açılış Takip — Ürün Açılış &amp; SKT Takibi</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🥫 Açılış Takip</h1>
+    <p class="subtitle">Ürünü okut, açılış tarihini kaydet, son kullanma tarihi otomatik hesaplansın</p>
+  </header>
+
+  <main>
+    <!-- ANA LİSTE EKRANI -->
+    <section id="view-list" class="view">
+      <div id="summary-bar" class="summary-bar hidden"></div>
+      <div id="product-list" class="product-list"></div>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">📦</div>
+        <p>Henüz kayıtlı ürün yok.</p>
+        <p class="muted">Bir ürünün barkodunu okutarak veya fotoğrafını çekerek başlayın.</p>
+      </div>
+      <button id="btn-add" class="fab" aria-label="Yeni ürün ekle">＋ Ürün Ekle</button>
+    </section>
+
+    <!-- EKLEME YÖNTEMİ SEÇİMİ -->
+    <section id="view-add-method" class="view hidden">
+      <h2>Ürünü nasıl tanıtmak istersiniz?</h2>
+      <div class="method-grid">
+        <button id="btn-method-scan" class="method-card">
+          <span class="method-icon">📷</span>
+          <span class="method-title">Barkod Okut</span>
+          <span class="method-desc">Kamerayla ürün barkodunu okutun; ürün adı ve kategorisi otomatik bulunur</span>
+        </button>
+        <button id="btn-method-photo" class="method-card">
+          <span class="method-icon">🖼️</span>
+          <span class="method-title">Fotoğraf Çek</span>
+          <span class="method-desc">Barkodu olmayan ürünler için fotoğraf çekip elle bilgi girin</span>
+        </button>
+      </div>
+      <button class="btn-secondary btn-back" data-back>← Geri</button>
+    </section>
+
+    <!-- BARKOD TARAMA EKRANI -->
+    <section id="view-scan" class="view hidden">
+      <h2>Barkodu kameraya gösterin</h2>
+      <div id="scanner" class="scanner-box"></div>
+      <p id="scan-status" class="muted center">Kamera başlatılıyor…</p>
+      <div class="manual-entry">
+        <input type="text" id="manual-barcode" inputmode="numeric" placeholder="veya barkodu elle yazın" />
+        <button id="btn-manual-barcode" class="btn-secondary">Devam</button>
+      </div>
+      <button class="btn-secondary btn-back" data-back>← Geri</button>
+    </section>
+
+    <!-- ÜRÜN FORMU -->
+    <section id="view-form" class="view hidden">
+      <h2 id="form-title">Ürün Bilgileri</h2>
+      <div id="lookup-status" class="lookup-status hidden"></div>
+      <form id="product-form">
+        <div class="photo-row">
+          <img id="form-photo-preview" class="photo-preview hidden" alt="Ürün fotoğrafı" />
+          <label class="btn-secondary photo-btn">
+            📸 Fotoğraf
+            <input type="file" id="form-photo" accept="image/*" capture="environment" hidden />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Ürün Adı *</span>
+          <input type="text" id="form-name" required placeholder="Örn: Süt 1L" />
+        </label>
+
+        <label class="field">
+          <span>Barkod</span>
+          <input type="text" id="form-barcode" inputmode="numeric" placeholder="—" />
+        </label>
+
+        <label class="field">
+          <span>Kategori</span>
+          <select id="form-category"></select>
+        </label>
+
+        <label class="field">
+          <span>Açılış Tarihi *</span>
+          <input type="date" id="form-opened" required />
+        </label>
+
+        <label class="field">
+          <span>Açıldıktan sonra tüketme süresi (gün)</span>
+          <input type="number" id="form-shelflife" min="1" placeholder="Kategoriye göre otomatik" />
+          <small class="muted">Kategori seçince otomatik dolar, isterseniz değiştirin.</small>
+        </label>
+
+        <label class="field">
+          <span>Etiketteki son kullanma tarihi (varsa)</span>
+          <input type="date" id="form-printed-expiry" />
+          <small class="muted">Girerseniz, iki tarihten erken olanı esas alınır.</small>
+        </label>
+
+        <div id="expiry-preview" class="expiry-preview hidden"></div>
+
+        <label class="field">
+          <span>Not</span>
+          <textarea id="form-notes" rows="2" placeholder="İsteğe bağlı"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" data-back>Vazgeç</button>
+          <button type="submit" class="btn-primary">💾 Kaydet</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ÜRÜN DETAY -->
+    <section id="view-detail" class="view hidden">
+      <div id="detail-content"></div>
+      <div class="form-actions">
+        <button id="btn-delete" class="btn-danger">🗑 Sil</button>
+        <button class="btn-secondary" data-back>← Geri</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="vendor/html5-qrcode.min.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
